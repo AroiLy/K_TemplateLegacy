@@ -1,0 +1,48 @@
+# Base Template Legacy réaliser par AroiLy.#6501
+
+Salut a tous je vous partage ma Base Template que j'ai crée pour but de vous facilité la création de votre base.
+Cette base comporte uniquement les Resouces principale pour que la base Fonctionne correctement !
+
+Je vous prie de ne pas vous attribuer cette base et de la vendre, toute personne qui s'appropriera ma base assumera les conséquences 🙂
+
+Pour lancer le serveur aller dans le start.bat est modifier c'est de lignes suivantes :
+
+- `cd /d C:Desktop\KTemplate`
+- `C:Desktop\KTemplate`\FXServer.exe +exec server.cfg`
+
+----------------------------------------------------------------------------------------------------------
+
+Vous pouvez retrouver le fichier nommé `SQL` c'est le fichier qui ce nommant kynozatemplate.sql
+Pour l'installer il suffit de l'importer dans votre base de donnée sois PHPADMIN ou HeidiSQL
+
+Oublier pas de changer la ligne `19` dans le `server.cfg`.
+
+Apres avoir mis votre SteamApiKey et votre LicenseKey vous pouvez démarrer votre `start.bat` !
+
+- Si vous avez besoin d'aide pour l'installation veuillez faire un ticket sur le discord : https://discord.gg/ppJAcSF4MZ
+
+
+
+
+POUR LE SPAWN DU DEBUTE :
+
+
+IMPOSSIBLE A CHANGER MEME DANS LES MAPS (SKATER ET HIPSTER) 
+----------------------------------------------------------------------------------------------------------
+
+# Author 
+Discord : AroiLy.#6501
+
+Youtube : AroiLy 
+
+Je vous demande juste de ne pas vous attribuer cette base / ou / de la vendre, toute personne qui s'amuse a s'approprier la base sera sanctionné 🙂
+
+----------------------------------------------------------------------------------------------------------
+
+### License
+Base Template Legacy de AroiLy - Base Template réalisé pour les joueurs qui veulent avoir une base Propre pour commencer ! 
+
+### Version ESX LEGACY
+
+Copyright (C) 2021 AroiLy
+
