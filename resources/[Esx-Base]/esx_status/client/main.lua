@@ -33,12 +33,12 @@ function GetStatusData(minimal)
 	return status
 end
 
-AddEventHandler('ddx_status:registerStatus', function(name, default, color, visible, tickCallback)
+AddEventHandler('esx_status:registerStatus', function(name, default, color, visible, tickCallback)
 	local status = CreateStatus(name, default, color, visible, tickCallback)
 	table.insert(Status, status)
 end)
 
-AddEventHandler('ddx_status:unregisterStatus', function(name)
+AddEventHandler('esx_status:unregisterStatus', function(name)
 	for k,v in ipairs(Status) do
 		if v.name == name then
 			table.remove(Status, k)
@@ -47,8 +47,8 @@ AddEventHandler('ddx_status:unregisterStatus', function(name)
 	end
 end)
 
-RegisterNetEvent('ddx_status:load')
-AddEventHandler('ddx_status:load', function(status)
+RegisterNetEvent('esx_status:load')
+AddEventHandler('esx_status:load', function(status)
 	for i=1, #Status, 1 do
 		for j=1, #status, 1 do
 			if Status[i].name == status[j].name then
@@ -76,8 +76,8 @@ AddEventHandler('ddx_status:load', function(status)
   
   end)
 
-RegisterNetEvent('ddx_status:set')
-AddEventHandler('ddx_status:set', function(name, val)
+RegisterNetEvent('esx_status:set')
+AddEventHandler('esx_status:set', function(name, val)
 	for i=1, #Status, 1 do
 		if Status[i].name == name then
 			Status[i].set(val)
@@ -90,11 +90,11 @@ AddEventHandler('ddx_status:set', function(name, val)
 		status = GetStatusData()
 	})
 
-	TriggerServerEvent('ddx_status:update', GetStatusData(true))
+	TriggerServerEvent('esx_status:update', GetStatusData(true))
 end)
 
-RegisterNetEvent('ddx_status:add')
-AddEventHandler('ddx_status:add', function(name, val)
+RegisterNetEvent('esx_status:add')
+AddEventHandler('esx_status:add', function(name, val)
 	for i=1, #Status, 1 do
 		if Status[i].name == name then
 			Status[i].add(val)
@@ -107,11 +107,11 @@ AddEventHandler('ddx_status:add', function(name, val)
 		status = GetStatusData()
 	})
 
-	TriggerServerEvent('ddx_status:update', GetStatusData(true))
+	TriggerServerEvent('esx_status:update', GetStatusData(true))
 end)
 
-RegisterNetEvent('ddx_status:remove')
-AddEventHandler('ddx_status:remove', function(name, val)
+RegisterNetEvent('esx_status:remove')
+AddEventHandler('esx_status:remove', function(name, val)
 	for i=1, #Status, 1 do
 		if Status[i].name == name then
 			Status[i].remove(val)
@@ -124,10 +124,10 @@ AddEventHandler('ddx_status:remove', function(name, val)
 		status = GetStatusData()
 	})
 
-	TriggerServerEvent('ddx_status:update', GetStatusData(true))
+	TriggerServerEvent('esx_status:update', GetStatusData(true))
 end)
 
-AddEventHandler('ddx_status:getStatus', function(name, cb)
+AddEventHandler('esx_status:getStatus', function(name, cb)
 	for i=1, #Status, 1 do
 		if Status[i].name == name then
 			cb(Status[i])
@@ -136,7 +136,7 @@ AddEventHandler('ddx_status:getStatus', function(name, cb)
 	end
 end)
 
-AddEventHandler('ddx_status:setDisplay', function(val)
+AddEventHandler('esx_status:setDisplay', function(val)
 	SendNUIMessage({
 		setDisplay = true,
 		display    = val
@@ -150,17 +150,17 @@ Citizen.CreateThread(function()
 
 		if IsPauseMenuActive() and not isPaused then
 			isPaused = true
-			TriggerEvent('ddx_status:setDisplay', 0.0)
+			TriggerEvent('esx_status:setDisplay', 0.0)
 		elseif not IsPauseMenuActive() and isPaused then
 			isPaused = false 
-			TriggerEvent('ddx_status:setDisplay', 0.5)
+			TriggerEvent('esx_status:setDisplay', 0.5)
 		end
 	end
 end)
 
 -- Loaded event
 Citizen.CreateThread(function()
-	TriggerEvent('ddx_status:loaded')
+	TriggerEvent('esx_status:loaded')
 end)
 
 -- Update server
@@ -168,6 +168,6 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(Config.UpdateInterval)
 
-		TriggerServerEvent('ddx_status:update', GetStatusData(true))
+		TriggerServerEvent('esx_status:update', GetStatusData(true))
 	end
 end)
