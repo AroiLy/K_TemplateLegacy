@@ -19,7 +19,7 @@ Citizen.CreateThread(function()
 			end
 
 			xPlayer.set('status', data)
-			TriggerClientEvent('ddx_status:load', playerId, data)
+			TriggerClientEvent('esx_status:load', playerId, data)
 		end)
 	end
 end)
@@ -35,7 +35,7 @@ AddEventHandler('esx:playerLoaded', function(playerId, xPlayer)
 		end
 
 		xPlayer.set('status', data)
-		TriggerClientEvent('ddx_status:load', playerId, data)
+		TriggerClientEvent('esx_status:load', playerId, data)
 	end)
 end)
 
@@ -49,7 +49,7 @@ AddEventHandler('esx:playerDropped', function(playerId, reason)
 	})
 end)
 
-AddEventHandler('ddx_status:getStatus', function(playerId, statusName, cb)
+AddEventHandler('esx_status:getStatus', function(playerId, statusName, cb)
 	local xPlayer = ESX.GetPlayerFromId(playerId)
 	local status  = xPlayer.get('status')
 
@@ -61,8 +61,8 @@ AddEventHandler('ddx_status:getStatus', function(playerId, statusName, cb)
 	end
 end)
 
-RegisterServerEvent('ddx_status:update')
-AddEventHandler('ddx_status:update', function(status)
+RegisterServerEvent('esx_status:update')
+AddEventHandler('esx_status:update', function(status)
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	if xPlayer then
