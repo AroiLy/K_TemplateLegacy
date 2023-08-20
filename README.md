@@ -1,4 +1,4 @@
- `🌴` Bienvenue chez AroiLy | Créations, le serveur pour les amateurs de nouveautés !
+ `🌴` Bienvenue chez AroiLyDev, le serveur pour les amateurs de nouveautés !
 
  `●` Chez nous, vous ne trouverez pas de `copier-coller`, seulement des créations inédites et différentes.
  
